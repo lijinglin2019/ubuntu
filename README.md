@@ -1,5 +1,7 @@
 # ubuntu
 
+[![Docker Images](https://images.microbadger.com/badges/image/lijinglin2019/ubuntu.svg)](https://hub.docker.com/r/lijinglin2019/ubuntu)
+
 以 `ubuntu 18.04` 为基础定制的镜像，预装了日常使用的一些软件
 
 ```bash
