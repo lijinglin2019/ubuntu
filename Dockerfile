@@ -1,11 +1,11 @@
 FROM ubuntu:18.04
 RUN apt-get update \
 	&& apt-get -y upgrade \
-	&& apt-get install -y build-essential sudo net-tools iproute2 bash zsh curl git htop vim tree \
-	psmisc lsof inetutils-ping fping dnsutils socat rinetd \
+	&& apt-get install -y ansible automake bash build-essential cmake curl dnsutils fping git glances htop httpie iftop inetutils-ping iotop iproute2 jq lsof make net-tools psmisc socat sudo tcpdump telnet tree vim wget zsh \
 	&& sudo chsh -s /usr/bin/zsh \
 	&& sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" \
 	&& sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="ys"/g' /root/.zshrc \
-	&& rm -rf /var/lib/apt/lists/*
+	&& rm -rf /var/lib/apt/lists/* \
+	&& sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
 WORKDIR	/root
 CMD ["/usr/bin/zsh"]
